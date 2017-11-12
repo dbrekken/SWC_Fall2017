@@ -1,0 +1,39 @@
+---
+title: "Introduction to R reports"
+author: "Deirdre Brekken"
+date: "November 12, 2017"
+output: html_document
+---
+# Data Analysis Report
+
+Today, **I** analyzed the _data_.
+
+* step 1
+* step 2
+* step 3
+
+1. First Step
+2. Second Step
+
+# Header 1
+## Subheading
+### Super Subheading
+
+Body text
+
+```{r load_pkgs, echo=FALSE}
+library(ggplot2)
+```
+
+```{r load_data, echo=FALSE}
+gapminder <- read.table("../Data/Data/gapminder.txt", header=TRUE)
+```
+
+```{r plot_data}
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = country)) +
+    geom_point() +
+    theme(legend.position="none") +
+    labs(x = "GDP Per Capita",
+         y = "Life Expectancy",
+         title = "Figure 1.")
+```

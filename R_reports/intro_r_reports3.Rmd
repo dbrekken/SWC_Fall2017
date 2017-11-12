@@ -1,0 +1,36 @@
+---
+title: "Life Expectancy Over Time"
+author: "Deirdre Brekken"
+date: "November 12, 2017"
+output: html_document
+---
+# Report on Life Expectancy over Time
+
+Data was analyzed from the Gapminder data.
+
+
+## Life Expectancy over time
+
+I analyzed the gapminder data representing the life expectancy from 142 countries from 1952 to 1997.
+
+```{r load_pkgs, echo=FALSE}
+library(ggplot2)
+```
+
+```{r load_data, echo=FALSE}
+gapminder <- read.table("../Data/Data/gapminder.txt", header=TRUE)
+```
+
+```{r plot_data, echo=FALSE}
+ggplot(data = gapminder, aes(x = year, y = lifeExp, color = continent)) +
+    geom_point() +
+  labs(
+        x = "Year",
+        y = "Life Expectancy",
+        title = "Life Expectancy over time"
+    ) 
+```
+
+The data is color coded by continent.
+
+Thank you!
