@@ -1,0 +1,5 @@
+git add git_steps.txt
+git commit -m "first list of steps to commit file"
+git status
+
+use git init one time
